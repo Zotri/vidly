@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getMovies } from "../services/fakeMovieService.js";
+import { paginate } from "../utils/paginate.js";
 import Like from "./common/Like";
 import Paging from "./common/Paging.jsx";
 
@@ -31,7 +32,11 @@ class Movies extends Component {
 	};
 	render() {
 		const { length: size } = this.state.movies;
-		const { pageSize, currentPage } = this.state;
+		const { pageSize, currentPage, movies: allMovies } = this.state;
+
+		// renders waht paginate finction returns
+		const movies = paginate(allMovies, currentPage, pageSize);
+
 		if (size === 0) {
 			return (
 				<div>
@@ -59,7 +64,7 @@ class Movies extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{this.state.movies.map((movie) => (
+						{movies.map((movie) => (
 							<tr key={movie._id}>
 								<td>{movie.title}</td>
 								<td>{movie.genre.name}</td>
