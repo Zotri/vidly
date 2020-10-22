@@ -5,7 +5,7 @@ const Paging = ({ itemsCount, pageSize, onPageChange, currentPage }) => {
 	const pageCount = Math.ceil(itemsCount / pageSize);
 	const pages = _.range(1, pageCount + 1);
 	if (itemsCount === pageSize) {
-		return;
+		return <div></div>;
 	}
 
 	return (
