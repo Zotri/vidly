@@ -31,13 +31,13 @@ class Movies extends Component {
 		this.setState({ currentPage: page });
 	};
 	render() {
-		const { length: size } = this.state.movies;
 		const { pageSize, currentPage, movies: allMovies } = this.state;
+		const { length: totalNumberOfMovies } = allMovies;
 
 		// renders waht paginate finction returns
 		const movies = paginate(allMovies, currentPage, pageSize);
-
-		if (size === 0) {
+		const { length: numberOfRenderedMoviesForEachPage } = movies;
+		if (totalNumberOfMovies === 0) {
 			return (
 				<div>
 					<p>There are no movies left in the DB!</p>
@@ -51,7 +51,8 @@ class Movies extends Component {
 		}
 		return (
 			<React.Fragment>
-				<p>Showing {size} movies in the DB</p>
+				<span>Found {totalNumberOfMovies} movies in the DB</span>
+				<p>Showing {numberOfRenderedMoviesForEachPage} on this page</p>
 				<table className='table'>
 					<thead>
 						<tr>
@@ -88,7 +89,7 @@ class Movies extends Component {
 					</tbody>
 				</table>
 				<Paging
-					itemsCount={size}
+					itemsCount={totalNumberOfMovies}
 					pageSize={pageSize}
 					currentPage={currentPage}
 					onPageChange={this.handlePageChange}
