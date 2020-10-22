@@ -1,12 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import _ from "lodash";
 
 const Paging = ({ itemsCount, pageSize, onPageChange, currentPage }) => {
 	const pageCount = Math.ceil(itemsCount / pageSize);
 	const pages = _.range(1, pageCount + 1);
-	console.log("currentPage", currentPage);
 	if (itemsCount === pageSize) {
-		return <nav></nav>;
+		return;
 	}
 
 	return (
