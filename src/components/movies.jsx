@@ -73,9 +73,7 @@ class Movies extends Component {
 		return (
 			<div className='row'>
 				<div className='col-3'>
-					<div className='row'>
-						<span>Found {totalNumberOfMovies} movies in the DB</span>
-					</div>
+					<p>Showing {filteredMovies.length} on this page</p>
 					<ListGroup
 						items={this.state.genres}
 						selectedItemFromGenre={this.state.selectedGenre}
@@ -83,7 +81,7 @@ class Movies extends Component {
 					/>
 				</div>
 				<div className='col'>
-					<p>Showing {filteredMovies.length} on this page</p>
+					<span>Found {totalNumberOfMovies} movies in the DB</span>
 					<MoviesTable
 						movies={movies}
 						onLike={this.handleLike}
