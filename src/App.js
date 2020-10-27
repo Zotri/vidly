@@ -1,5 +1,5 @@
 import React from "react";
-import Movie from "./components/movies.jsx";
+import Movie from "./components/Movies.jsx";
 import "./App.css";
 
 function App() {

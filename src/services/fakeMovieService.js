@@ -77,7 +77,7 @@ const movies = [
 	{
 		_id: "5b31ca3eeb7f6fbasdq71821",
 		title: "Message From the King",
-		genre: { _id: "5b21ca3eeb1234fbccd47717", name: "Action" },
+		genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Action" },
 		numberInStock: 20,
 		dailyRentalRate: 8,
 		liked: false
