@@ -19,7 +19,6 @@ class Movies extends Component {
 	}
 
 	handleDelete = (movie) => {
-		console.log("from deletion btn movies", this.state.movies);
 		const moviesAfterDeletion = this.state.movies.filter(
 			(m) => m._id !== movie._id
 		);
