@@ -15,7 +15,8 @@ class Movies extends Component {
 	};
 
 	componentDidMount() {
-		this.setState({ movies: getMovies(), genres: getGenres() });
+		const genres = [{ name: "All Genres" }, ...getGenres()];
+		this.setState({ movies: getMovies(), genres });
 	}
 
 	handleDelete = (movie) => {
@@ -39,7 +40,7 @@ class Movies extends Component {
 	};
 	handleGenreSelect = (genre) => {
 		console.log("slectedItem", genre);
-		this.setState({ selectedGenre: genre });
+		this.setState({ selectedGenre: genre, currentPage: 1 });
 	};
 	render() {
 		const {
@@ -50,9 +51,10 @@ class Movies extends Component {
 		} = this.state;
 		const { length: totalNumberOfMovies } = allMovies;
 		// apply fliter before pagination to set page number properly to the number of filtered movies
-		const filteredMovies = selectedGenre
-			? allMovies.filter((m) => m.genre._id === selectedGenre._id)
-			: allMovies;
+		const filteredMovies =
+			selectedGenre && selectedGenre._id
+				? allMovies.filter((m) => m.genre._id === selectedGenre._id)
+				: allMovies;
 		// renders what paginate function returns
 		const movies = paginate(filteredMovies, currentPage, pageSize);
 
