@@ -87,6 +87,7 @@ class Movies extends Component {
 		}
 		return (
 			<div className='row'>
+				<div className='row'></div>
 				<div className='col-3'>
 					<p>Showing {filteredMovies.length} on this page</p>
 					<ListGroup
