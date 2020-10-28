@@ -42,6 +42,10 @@ class Movies extends Component {
 		console.log("slectedItem", genre);
 		this.setState({ selectedGenre: genre, currentPage: 1 });
 	};
+	hanldeSort = (path) => {
+		console.log("path", path);
+	};
+
 	render() {
 		const {
 			pageSize,
@@ -86,6 +90,7 @@ class Movies extends Component {
 						movies={movies}
 						onLike={this.handleLike}
 						onDelete={this.handleDelete}
+						onSort={this.hanldeSort}
 					/>
 					<Paging
 						itemsCount={filteredMovies.length}
