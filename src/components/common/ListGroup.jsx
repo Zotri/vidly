@@ -12,16 +12,16 @@ const ListGroup = (props) => {
 	return (
 		<div className='list-group'>
 			{items.map((item) => (
-					<li
-						onClick={() => onSelecteItem(item)}
-						key={item[valueProperty]}
-						className={
-							item === selectedItemFromGenre
-								? "list-group-item active"
-								: "list-group-item"
-						}>
-						{item[textProperty]}
-					</li>
+				<li
+					onClick={() => onSelecteItem(item)}
+					key={item[valueProperty]}
+					className={
+						item === selectedItemFromGenre
+							? "list-group-item active"
+							: "list-group-item"
+					}>
+					{item[textProperty]}
+				</li>
 			))}
 		</div>
 	);
