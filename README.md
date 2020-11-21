@@ -1,3 +1,16 @@
+Vidly Application is a simple web application to review list of movies in some order. User can like movie as wished or delete it and paginate through the imported movies from dummy database. This app still in development phasse!
+
+The app is not suited for production or commercial reuse!
+
+written by Mahmoud Otri. Resource from code with mosh learning course.  
+
+The app is based on react components and it is for learning purposes not suited for production or commercial reuse.
+
+Deployed with nodeJs.
+$ npm i 
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
